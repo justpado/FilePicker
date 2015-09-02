@@ -13,9 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-/**
- * Created by chris.lim on 2015. 9. 1..
- */
+
 public class FilePickerAdapter extends ArrayAdapter<String> {
 
     String currentDir;
@@ -87,7 +85,7 @@ public class FilePickerAdapter extends ArrayAdapter<String> {
                 else
                     mViewHolder.icon.setImageResource(R.drawable.folder);
 
-                mViewHolder.fileInfo.setText(file.list().length + " items | " + permission);
+                mViewHolder.fileInfo.setText(file.list().length + " | " + dFormat.format(lastModified) + " items | " + permission);
             } else {
                 String fname = file.toString();
                 String fext = fname.substring(fname.lastIndexOf(".") + 1);
