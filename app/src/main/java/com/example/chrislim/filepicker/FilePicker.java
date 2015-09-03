@@ -157,6 +157,8 @@ public class FilePicker extends ListActivity {
 
             }
 
+            long loadStartTime = System.currentTimeMillis();
+
 			/* sort the arraylist that was made from above for loop */
             switch(mSortType) {
                 case SORT_NONE:
@@ -213,7 +215,10 @@ public class FilePicker extends ListActivity {
                             fArrayList.add((String)a);
                     }
                     break;
+
             }
+
+            Toast.makeText(mContext,"Sorting " + (System.currentTimeMillis() - loadStartTime) + "ms",Toast.LENGTH_LONG).show();
 
         } else {
             fArrayList.add("Emtpy");
